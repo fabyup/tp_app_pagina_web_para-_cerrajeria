@@ -29,11 +29,21 @@
     text-decoration: none;
   }
   
-  section {
+  section h1{
+    
     margin: 20px;
     padding: 20px;
     background-color:#000;
     border-radius: 5px;
+    color: #515cff;
+    justify-content: center;
+  }
+  h1{
+    display: grid;
+    width: 50%;
+    text-align: center;
+    font-family: cursive;
+
   }
   
   footer {
@@ -71,5 +81,85 @@
   .imagen-reducida {
     width: 100%;  /* La imagen se adapta al ancho del contenedor */
     height: auto; /* Mantiene la proporción original */
+  }
+  /* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos del header */
+  header {
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Sección inicio: Centrando contenido */
+  #inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Altura de la sección para centrar verticalmente */
+    text-align: center;
+  }
+  
+  #inicio h1 {
+    margin-bottom: 10px;
+  }
+  
+  /* Imagen centrada */
+  .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .imagen-reducida {
+    width: 200px; /* Ajusta el tamaño según lo necesites */
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  /* Sección servicios y contacto */
+  section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 5px;
+    color: aliceblue;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    margin-top: auto;
   }
   
