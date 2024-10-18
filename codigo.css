@@ -64,4 +64,12 @@
   button:hover {
     background-color: #45a049;
   }
+  .contenedor {
+    width: 20%;  /* El contenedor ocupa el 50% del ancho de la pantalla */
+  }
+  
+  .imagen-reducida {
+    width: 100%;  /* La imagen se adapta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción original */
+  }
   
