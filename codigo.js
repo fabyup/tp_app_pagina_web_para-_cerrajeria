@@ -13,10 +13,10 @@ const servicios = [
     2500
   ),
   new Servicio("Copia de Llaves", "Copias de llaves al instante.", 500),
+
   new Servicio(
     "Instalación de Cerraduras",
-    "Instalamos cerraduras de alta seguridad.",
-    3000
+    "Instalamos cerraduras de alta seguridad."
   ),
   new Servicio(
     "Reparación de Cerraduras",
