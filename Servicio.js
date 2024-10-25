@@ -32,7 +32,6 @@ const servicios = [
     "Reparación de cajas fuertes",
     "Especialistas en reparación de cajas fuertes."
   )
-];
 
-// Exportar la clase para usarla en otros archivos
-export default Servicio;
+  // Exportar la clase para usarla en otros archivos
+];
