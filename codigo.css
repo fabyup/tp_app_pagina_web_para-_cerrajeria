@@ -35,7 +35,7 @@ nav a {
 section {
   margin: 20px;
   padding: 20px;
-  background-color: #111;
+  background-color: #000;
   border-radius: 5px;
   color: #515cff;
   text-align: center;
@@ -54,12 +54,17 @@ section {
   object-fit: contain;
 }
 
+.urgencia {
+  color: #ff00ff;
+}
+
 footer {
   text-align: center;
   padding: 10px;
   background-color: #000;
-  color: #515cff;
+  color: #ffff;
   margin-top: auto;
+  background-color: #0b0c0b;
 }
 
 form {
@@ -81,4 +86,11 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.servicio {
+  background-color: #1a1a1a;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
 }

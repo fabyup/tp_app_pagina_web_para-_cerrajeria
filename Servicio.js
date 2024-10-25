@@ -8,7 +8,7 @@ class Servicio {
 
   mostrarServicio() {
     return `
-            <div class="servicio">
+            <div class="servicios">
                 <h3>${this.nombre}</h3>
                 <p>${this.descripcion}</p>
                 <p><strong>Precio:</strong> $${this.precio}</p>
