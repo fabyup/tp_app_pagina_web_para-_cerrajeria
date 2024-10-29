@@ -60,11 +60,12 @@ p {
   /* Ajusta el margen */
 }
 
-.tarjetas-container {
+.tarjetas-contenedor {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  justify-content: space-around; /* Distribuye las tarjetas con espacio uniforme */
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 20px;
 }
 
 .tarjeta {
@@ -82,7 +83,7 @@ p {
   padding: 10px;
 }
 
-.imagen-servicio {
+.imagen-cerrajero {
   width: 100%;
   /* Aumenta el ancho de la imagen */
   max-width: 300px;
