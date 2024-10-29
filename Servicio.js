@@ -1,8 +1,9 @@
 // Clase Servicio
 class Servicio {
-  constructor(nombre, descripcion) {
+  constructor(nombre, descripcion, imagen) {
     this.nombre = nombre;
     this.descripcion = descripcion;
+    this.imagen = imagen;
   }
 
   generarHTML() {

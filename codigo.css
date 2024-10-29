@@ -60,6 +60,51 @@ p {
   /* Ajusta el margen */
 }
 
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 240px;
+  /* Cambia el valor base */
+  max-width: 300px;
+  /* Aumenta el ancho máximo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.imagen-servicio {
+  width: 100%;
+  /* Aumenta el ancho de la imagen */
+  max-width: 300px;
+  /* Ajusta el ancho máximo de la imagen */
+  height: auto;
+  /* Mantiene la proporción */
+}
+
+h2 {
+  font-size: 24px;
+  /* Tamaño del título */
+  text-align: center;
+  margin-top: 8px;
+}
+
+p {
+  font-size: 16px;
+  /* Tamaño del texto de descripción */
+  text-align: center;
+  margin: 5px 16px 16px;
+}
+
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 600px) {
   .tarjeta {
@@ -67,3 +112,5 @@ p {
     /* Ocupa el 100% del ancho en pantallas pequeñas */
   }
 }
+
+/* Media Queries para pantallas más pequeñas */
