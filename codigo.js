@@ -15,7 +15,7 @@ document.getElementById("form-contacto").addEventListener("submit", e => {
 document.addEventListener("DOMContentLoaded", function() {
   // Rellenar la lista de servicios al cargar la página
   servicios.forEach(servicio => {
-    listaServicios.innerHTML += servicio.generarHTML();
+    listaServicios.generarHTML += servicio.generarHTML();
   });
 
   document

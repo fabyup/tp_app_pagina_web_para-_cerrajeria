@@ -1,4 +1,4 @@
-// Clase Servicio
+
 class Servicio {
   constructor(nombre, descripcion, imagen) {
     this.nombre = nombre;

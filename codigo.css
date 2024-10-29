@@ -8,9 +8,9 @@ body {
 }
 
 header {
-  background-color: #0b0c0b;
+  background-color:#515cff;
   color: white;
-  padding: 10px;
+  width: 100%;
   text-align: center;
 }
 
@@ -41,6 +41,11 @@ section {
   align-items: center;
   margin: 20px 0;
 }
+.imagen-cerrajero {
+  width: 50%; /* La imagen ocupa el ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción original */
+  border-radius: 4px;
+}
 
 .imagen-reducida {
   width: 200px;
@@ -64,23 +69,18 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* Distribuye las tarjetas con espacio uniforme */
-  gap: 20px; /* Espacio entre tarjetas */
+  gap: 5px; /* Espacio entre tarjetas */
   padding: 20px;
 }
 
 .tarjeta {
-  background-color: white;
+  width: 200px; /* Define el ancho de cada tarjeta */
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  flex: 1 1 240px;
-  /* Cambia el valor base */
-  max-width: 300px;
-  /* Aumenta el ancho máximo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .imagen-cerrajero {
@@ -105,6 +105,58 @@ p {
   text-align: center;
   margin: 5px 16px 16px;
 }
+/* Estilo para centrar la sección del formulario */
+#contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Hace que la sección ocupe toda la altura de la ventana */
+  background-color:#000; /* Opcional: fondo claro para resaltar el formulario */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilo del formulario */
+#form-contacto {
+  width: 100%;
+  max-width: 200px; /* Limita el ancho máximo del formulario */
+  padding: 20px;
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 8px;
+}
+
+/* Espaciado entre los elementos del formulario */
+#form-contacto label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  
+  border-radius: 4px;
+}
+
+#form-contacto button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#form-contacto button:hover {
+  background-color: #0056b3;
+}
+
 
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 600px) {
