@@ -42,7 +42,7 @@ section {
   margin: 20px 0;
 }
 .imagen-cerrajero {
-  width: 50%; /* La imagen ocupa el ancho de la tarjeta */
+  width: 10%; /* La imagen ocupa el ancho de la tarjeta */
   height: auto; /* Mantiene la proporción original */
   border-radius: 4px;
 }
@@ -77,18 +77,20 @@ p {
   width: 200px; /* Define el ancho de cada tarjeta */
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 10px;
+  padding: 40px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #979292;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .imagen-cerrajero {
-  width: 100%;
+  border-radius:50%;
+  width: 90%;
   /* Aumenta el ancho de la imagen */
   max-width: 300px;
   /* Ajusta el ancho máximo de la imagen */
-  height: auto;
+  height: 40%;
+  
   /* Mantiene la proporción */
 }
 
@@ -107,7 +109,7 @@ p {
 }
 /* Estilo para centrar la sección del formulario */
 #contacto {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 50vh; /* Hace que la sección ocupe toda la altura de la ventana */
@@ -143,7 +145,7 @@ p {
 }
 
 #form-contacto button {
-  width: 100%;
+  width: 110%;
   padding: 10px;
   background-color: #007bff;
   
@@ -155,6 +157,9 @@ p {
 
 #form-contacto button:hover {
   background-color: #0056b3;
+}
+footer{
+  color: #007bff;
 }
 
 
