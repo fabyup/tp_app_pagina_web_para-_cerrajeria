@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background-color:#515cff;
+  background-color: #515cff;
   color: white;
   width: 100%;
   text-align: center;
@@ -41,9 +41,12 @@ section {
   align-items: center;
   margin: 20px 0;
 }
+
 .imagen-cerrajero {
-  width: 10%; /* La imagen ocupa el ancho de la tarjeta */
-  height: auto; /* Mantiene la proporción original */
+  width: 10%;
+  /* La imagen ocupa el ancho de la tarjeta */
+  height: auto;
+  /* Mantiene la proporción original */
   border-radius: 4px;
 }
 
@@ -68,29 +71,32 @@ p {
 .tarjetas-contenedor {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; /* Distribuye las tarjetas con espacio uniforme */
-  gap: 5px; /* Espacio entre tarjetas */
+  justify-content: space-around;
+  /* Distribuye las tarjetas con espacio uniforme */
+  gap: 5px;
+  /* Espacio entre tarjetas */
   padding: 20px;
 }
 
 .tarjeta {
-  width: 200px; /* Define el ancho de cada tarjeta */
+  width: 200px;
+  /* Define el ancho de cada tarjeta */
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 40px;
   text-align: center;
-  background-color: #979292;
+  background-color: #33ca;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .imagen-cerrajero {
-  border-radius:50%;
+  border-radius: 50%;
   width: 90%;
   /* Aumenta el ancho de la imagen */
   max-width: 300px;
   /* Ajusta el ancho máximo de la imagen */
   height: 40%;
-  
+
   /* Mantiene la proporción */
 }
 
@@ -107,13 +113,16 @@ p {
   text-align: center;
   margin: 5px 16px 16px;
 }
+
 /* Estilo para centrar la sección del formulario */
 #contacto {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* Hace que la sección ocupe toda la altura de la ventana */
-  background-color:#000; /* Opcional: fondo claro para resaltar el formulario */
+  height: 50vh;
+  /* Hace que la sección ocupe toda la altura de la ventana */
+  background-color: #000;
+  /* Opcional: fondo claro para resaltar el formulario */
   padding: 20px;
   box-sizing: border-box;
 }
@@ -121,10 +130,12 @@ p {
 /* Estilo del formulario */
 #form-contacto {
   width: 100%;
-  max-width: 200px; /* Limita el ancho máximo del formulario */
+  max-width: 200px;
+  /* Limita el ancho máximo del formulario */
   padding: 20px;
-  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
   border-radius: 8px;
 }
 
@@ -140,7 +151,7 @@ p {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  
+
   border-radius: 4px;
 }
 
@@ -148,7 +159,7 @@ p {
   width: 110%;
   padding: 10px;
   background-color: #007bff;
-  
+
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -158,8 +169,11 @@ p {
 #form-contacto button:hover {
   background-color: #0056b3;
 }
-footer{
+
+footer {
   color: #007bff;
+
+  background-color: #0056b3;
 }
 
 
