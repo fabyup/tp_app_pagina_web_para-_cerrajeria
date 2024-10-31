@@ -1,33 +1,31 @@
 // Lista de servicios
 
-import { Servicio } from "./Servicio.js"; // Ajusta la ruta según tu estructura
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   const listaServicios = document.getElementById("lista-servicios");
 
   // Servicios instanciados
   const servicios = [
-    new Servicio(
+    new Servicios(
       "Apertura de puertas",
       "Servicio rápido y eficiente para abrir cualquier tipo de puerta.",
       "istockphoto-1357874479-612x612.jpg"
     ),
-    new Servicio(
+    new Servicios(
       "Cambio de cerraduras",
       "Instalación y cambio de cerraduras para mayor seguridad.",
       "cambiar cerradura-imgEs20230315012353Peq.jpg"
     ),
-    new Servicio(
+    new Servicios(
       "Duplicado de llaves",
       "Realizamos duplicados de llaves en el momento.",
       "keys-8877747_640.png"
     ),
-    new Servicio(
+    new Servicios(
       "Apertura de puertas de autos",
       "Trabajos con eficiencia.",
       "istockphoto-1137285203-612x612 apertura de autos.jpg"
     ),
-    new Servicio(
+    new Servicios(
       "Apertura de cajas fuertes",
       "Apertura de cajas fuertes y arreglos.",
       "3306927 caja fuerte.png"
@@ -39,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     listaServicios.innerHTML += servicio.generarHTML();
   });
 
+  // Manejo del formulario de contacto
   document.getElementById("form-contacto").addEventListener("submit", e => {
     e.preventDefault();
     const nombre = document.getElementById("nombre").value;
@@ -49,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("form-contacto").reset();
   });
 
+  // Manejo de la sección de servicios
   document
     .querySelector('nav a[href="#servicios"]')
     .addEventListener("click", function(e) {
