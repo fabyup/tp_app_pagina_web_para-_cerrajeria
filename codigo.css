@@ -183,3 +183,71 @@ footer {
 }
 
 /* Media Queries para pantallas más pequeñas */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.tarjetas-container {
+  display: flex;
+  /* Habilita flexbox para el contenedor */
+  flex-wrap: wrap;
+  /* Permite que las tarjetas se envuelvan */
+  gap: 20px;
+  /* Espacio entre las tarjetas */
+  justify-content: center;
+  /* Centra las tarjetas en el contenedor */
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 200px;
+  /* Permite que las tarjetas crezcan y se encojan */
+  max-width: 100px;
+  /* Ancho máximo de las tarjetas */
+  min-width: 180px;
+  /* Ancho mínimo de las tarjetas */
+  display: flex;
+  /* Habilita flexbox en la tarjeta */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  align-items: center;
+  /* Centra horizontalmente */
+  padding: 10px;
+  /* Espaciado interno */
+}
+
+.imagen-cerrajero {
+  width: 80%;
+  /* Ajusta el ancho de la imagen */
+  max-width: 200px;
+  /* Ancho máximo de la imagen */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+}
+
+h2 {
+  text-align: center;
+  margin-top: 8px;
+}
+
+p {
+  text-align: center;
+  font-size: 20px;
+  margin: 5px 16px 16px;
+  /* Ajusta el margen */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .tarjeta {
+    flex: 1 1 100%;
+    /* Ocupa el 100% del ancho en pantallas pequeñas */
+  }
+}
