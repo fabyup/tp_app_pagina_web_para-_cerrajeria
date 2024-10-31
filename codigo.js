@@ -1,21 +1,52 @@
 // Lista de servicios
 
-const listaServicios = document.getElementById("lista-servicios");
-
-document.getElementById("form-contacto").addEventListener("submit", e => {
-  e.preventDefault();
-  const nombre = document.getElementById("nombre").value;
-  const telefono = document.getElementById("telefono").value;
-  alert(
-    `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
-  );
-  document.getElementById("form-contacto").reset();
-});
+import { Servicio } from "./Servicio.js"; // Ajusta la ruta según tu estructura
 
 document.addEventListener("DOMContentLoaded", function() {
+  const listaServicios = document.getElementById("lista-servicios");
+
+  // Servicios instanciados
+  const servicios = [
+    new Servicio(
+      "Apertura de puertas",
+      "Servicio rápido y eficiente para abrir cualquier tipo de puerta.",
+      "istockphoto-1357874479-612x612.jpg"
+    ),
+    new Servicio(
+      "Cambio de cerraduras",
+      "Instalación y cambio de cerraduras para mayor seguridad.",
+      "cambiar cerradura-imgEs20230315012353Peq.jpg"
+    ),
+    new Servicio(
+      "Duplicado de llaves",
+      "Realizamos duplicados de llaves en el momento.",
+      "keys-8877747_640.png"
+    ),
+    new Servicio(
+      "Apertura de puertas de autos",
+      "Trabajos con eficiencia.",
+      "istockphoto-1137285203-612x612 apertura de autos.jpg"
+    ),
+    new Servicio(
+      "Apertura de cajas fuertes",
+      "Apertura de cajas fuertes y arreglos.",
+      "3306927 caja fuerte.png"
+    )
+  ];
+
   // Rellenar la lista de servicios al cargar la página
   servicios.forEach(servicio => {
-    listaServicios.generarHTML += servicio.generarHTML();
+    listaServicios.innerHTML += servicio.generarHTML();
+  });
+
+  document.getElementById("form-contacto").addEventListener("submit", e => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value;
+    const telefono = document.getElementById("telefono").value;
+    alert(
+      `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
+    );
+    document.getElementById("form-contacto").reset();
   });
 
   document
@@ -23,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
     .addEventListener("click", function(e) {
       e.preventDefault();
       const serviciosSection = document.getElementById("servicios");
-
       serviciosSection.style.display =
         serviciosSection.style.display === "none" ||
         serviciosSection.style.display === ""
@@ -31,5 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
           : "none";
     });
 
+  // Ocultar la sección de servicios inicialmente
   document.getElementById("servicios").style.display = "none";
 });

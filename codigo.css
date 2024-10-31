@@ -42,13 +42,7 @@ section {
   margin: 20px 0;
 }
 
-.imagen-cerrajero {
-  width: 10%;
-  /* La imagen ocupa el ancho de la tarjeta */
-  height: auto;
-  /* Mantiene la proporción original */
-  border-radius: 4px;
-}
+
 
 .imagen-reducida {
   width: 200px;
