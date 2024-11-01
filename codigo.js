@@ -1,40 +1,37 @@
-// Lista de servicios
+import { Servicio } from "./Servicio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const listaServicios = document.getElementById("lista-servicios");
-
-  // Servicios instanciados
   const servicios = [
-    new Servicios(
+    new Servicio(
       "Apertura de puertas",
       "Servicio rápido y eficiente para abrir cualquier tipo de puerta.",
       "istockphoto-1357874479-612x612.jpg"
     ),
-    new Servicios(
+    new Servicio(
       "Cambio de cerraduras",
       "Instalación y cambio de cerraduras para mayor seguridad.",
-      "cambiar cerradura-imgEs20230315012353Peq.jpg"
+      "cambiar_cerradura-imgEs20230315012353Peq.jpg"
     ),
-    new Servicios(
+    new Servicio(
       "Duplicado de llaves",
       "Realizamos duplicados de llaves en el momento.",
       "keys-8877747_640.png"
     ),
-    new Servicios(
+    new Servicio(
       "Apertura de puertas de autos",
       "Trabajos con eficiencia.",
-      "istockphoto-1137285203-612x612 apertura de autos.jpg"
+      "istockphoto-1137285203-612x612_apertura_de_autos.jpg"
     ),
-    new Servicios(
+    new Servicio(
       "Apertura de cajas fuertes",
       "Apertura de cajas fuertes y arreglos.",
       "3306927 caja fuerte.png"
     )
   ];
 
-  // Rellenar la lista de servicios al cargar la página
+  const contenedorTarjetas = document.querySelector(".tarjetas-container");
   servicios.forEach(servicio => {
-    listaServicios.innerHTML += servicio.generarHTML();
+    contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
 
   // Manejo del formulario de contacto
@@ -49,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Manejo de la sección de servicios
+  const serviciosSection = document.getElementById("servicios");
   document
     .querySelector('nav a[href="#servicios"]')
-    .addEventListener("click", function(e) {
+    .addEventListener("click", e => {
       e.preventDefault();
-      const serviciosSection = document.getElementById("servicios");
       serviciosSection.style.display =
         serviciosSection.style.display === "none" ||
         serviciosSection.style.display === ""
@@ -62,43 +59,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Ocultar la sección de servicios inicialmente
-  document.getElementById("servicios").style.display = "none";
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const servicios = [
-    new ServicioCerrajero(
-      "Apertura de puertas",
-      "Servicio rápido y eficiente para abrir cualquier tipo de puerta.",
-      "istockphoto-1357874479-612x612.jpg"
-    ),
-    new ServicioCerrajero(
-      "Cambio de cerraduras",
-      "Instalación y cambio de cerraduras para mayor seguridad.",
-      "cuanto-cuesta-cambiar-la-cerradura.jpg"
-    ),
-    new ServicioCerrajero(
-      "Duplicado de llaves",
-      "Realizamos duplicados de llaves en el momento.",
-      "keys-8877747_640.png"
-    ),
-    new ServicioCerrajero(
-      "Apertura de puertas de autos",
-      "Trabajos con eficiencia.",
-      "istockphoto-1137285203-612x612 apertura de autos.jpg"
-    ),
-    new ServicioCerrajero(
-      "Apertura de cajas fuertes",
-      "Reparación de cajas fuertes.",
-      "3306927 caja fuerte.png"
-    )
-  ];
-
-  const agregarTarjetas = () => {
-    const contenedor = document.querySelector(".tarjetas-container");
-    servicios.forEach(servicio => {
-      contenedor.appendChild(servicio.crearTarjeta());
-    });
-  };
-
-  agregarTarjetas();
+  serviciosSection.style.display = "none";
 });

@@ -5,31 +5,13 @@ export class Servicio {
     this.imagen = imagen;
   }
 
-  generarHTML() {
-    return `
-      <li class="tarjeta">
-        <h3>${this.nombre}</h3>
-        <img src="${this.imagen}" alt="${this.nombre}" class="imagen-cerrajero">
-        <p>${this.descripcion}</p>
-      </li>
-    `;
-  }
-}
-
-class ServicioCerrajero {
-  constructor(nombre, descripcion, imagen) {
-    this.nombre = nombre;
-    this.descripcion = descripcion;
-    this.imagen = imagen;
-  }
-
   crearTarjeta() {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta");
 
-    const h2 = document.createElement("h2");
-    h2.textContent = this.nombre;
-    tarjeta.appendChild(h2);
+    const h3 = document.createElement("h3");
+    h3.textContent = this.nombre;
+    tarjeta.appendChild(h3);
 
     const img = document.createElement("img");
     img.src = this.imagen;

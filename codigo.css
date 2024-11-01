@@ -1,20 +1,18 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
-
 body {
-  background-color: #000000;
-
+  font-family: Arial, sans-serif;
+  background-color: #000;
 }
 
 header {
-  margin-top: opx;
-  background-color: #515cff;
+  background-color: #000080;
   color: white;
-  width: 100%;
   text-align: center;
+  padding: 10px 0;
 }
 
 nav ul {
@@ -29,6 +27,12 @@ nav a {
   text-decoration: none;
 }
 
+h3 {
+  color: #0f2591;
+  justify-content: center;
+  font-size: 20px;
+}
+
 section {
   margin: 20px;
   padding: 20px;
@@ -38,105 +42,66 @@ section {
   text-align: center;
 }
 
-.contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-
-
-.imagen-reducida {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-}
-
 .urgencia {
   color: #ff00ff;
   font-size: 30px;
 }
 
-p {
-  text-align: center;
-  font-size: 20px;
-  margin: 5px 16px 16px;
-  /* Ajusta el margen */
-}
-
-.tarjetas-contenedor {
+.tarjetas-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  /* Distribuye las tarjetas con espacio uniforme */
-  gap: 5px;
-  /* Espacio entre tarjetas */
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
 
 .tarjeta {
-  width: 200px;
-  /* Define el ancho de cada tarjeta */
-  border: 1px solid #ccc;
+  background-color: white;
   border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-  background-color: #33ca;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1 1 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 
 .imagen-cerrajero {
-  border-radius: 50%;
-  width: 90%;
-  /* Aumenta el ancho de la imagen */
-  max-width: 300px;
-  /* Ajusta el ancho máximo de la imagen */
-  height: 40%;
+  width: 80%;
+  max-width: 200px;
+  height: auto;
+}
 
-  /* Mantiene la proporción */
+.imagen-reducida {
+  width: 200px;
 }
 
 h2 {
-  font-size: 24px;
-  /* Tamaño del título */
   text-align: center;
   margin-top: 8px;
 }
 
 p {
-  font-size: 16px;
-  /* Tamaño del texto de descripción */
   text-align: center;
-  margin: 5px 16px 16px;
+  font-size: 20px;
+  margin: 5px 0 16px;
 }
 
-/* Estilo para centrar la sección del formulario */
 #contacto {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  /* Hace que la sección ocupe toda la altura de la ventana */
-  background-color: #52d6b1;
-  /* Opcional: fondo claro para resaltar el formulario */
+
   padding: 20px;
-  box-sizing: border-box;
+  border-radius: 8px;
+
 }
 
-/* Estilo del formulario */
 #form-contacto {
   width: 100%;
-  max-width: 200px;
-  /* Limita el ancho máximo del formulario */
-  padding: 20px;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
-  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-/* Espaciado entre los elementos del formulario */
 #form-contacto label {
   display: block;
   margin-bottom: 8px;
@@ -148,19 +113,17 @@ p {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-
   border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 #form-contacto button {
-  width: 110%;
+  width: 100%;
   padding: 10px;
   background-color: #007bff;
-
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
 }
 
 #form-contacto button:hover {
@@ -168,86 +131,20 @@ p {
 }
 
 footer {
-  color: #007bff;
-
-  background-color: #0056b3;
+  color: #3a92e9;
+  background-color: #000080;
+  text-align: center;
+  padding: 10px 0;
 }
 
-
-/* Media Queries para pantallas más pequeñas */
 @media (max-width: 600px) {
-  .tarjeta {
-    flex: 1 1 100%;
-    /* Ocupa el 100% del ancho en pantallas pequeñas */
+  nav ul {
+    flex-direction: column;
+    /* Cambiar la dirección de la navegación */
   }
-}
 
-/* Media Queries para pantallas más pequeñas */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-.tarjetas-container {
-  display: flex;
-  /* Habilita flexbox para el contenedor */
-  flex-wrap: wrap;
-  /* Permite que las tarjetas se envuelvan */
-  gap: 20px;
-  /* Espacio entre las tarjetas */
-  justify-content: center;
-  /* Centra las tarjetas en el contenedor */
-}
-
-.tarjeta {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  flex: 1 1 200px;
-  /* Permite que las tarjetas crezcan y se encojan */
-  max-width: 100px;
-  /* Ancho máximo de las tarjetas */
-  min-width: 180px;
-  /* Ancho mínimo de las tarjetas */
-  display: flex;
-  /* Habilita flexbox en la tarjeta */
-  flex-direction: column;
-  /* Organiza los elementos en columna */
-  align-items: center;
-  /* Centra horizontalmente */
-  padding: 10px;
-  /* Espaciado interno */
-}
-
-.imagen-cerrajero {
-  width: 80%;
-  /* Ajusta el ancho de la imagen */
-  max-width: 200px;
-  /* Ancho máximo de la imagen */
-  height: auto;
-  /* Mantiene la proporción de la imagen */
-}
-
-h2 {
-  text-align: center;
-  margin-top: 8px;
-}
-
-p {
-  text-align: center;
-  font-size: 20px;
-  margin: 5px 16px 16px;
-  /* Ajusta el margen */
-}
-
-/* Media Queries para pantallas más pequeñas */
-@media (max-width: 600px) {
   .tarjeta {
-    flex: 1 1 100%;
-    /* Ocupa el 100% del ancho en pantallas pequeñas */
+    width: 90%;
+    /* Ajustar el ancho de las tarjetas en pantallas pequeñas */
   }
 }
