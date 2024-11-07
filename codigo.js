@@ -1,6 +1,7 @@
 import { Servicio } from "./Servicio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Lista de servicios
   const servicios = [
     new Servicio(
       "Apertura de puertas",
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Servicio(
       "Cambio de cerraduras",
       "Instalación y cambio de cerraduras para mayor seguridad.",
-      "cambiar_cerradura-imgEs20230315012353Peq.jpg"
+      "cuanto-cuesta-cambiar-la-cerradura.jpg"
     ),
     new Servicio(
       "Duplicado de llaves",
@@ -20,16 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     new Servicio(
       "Apertura de puertas de autos",
       "Trabajos con eficiencia.",
-      "istockphoto-1137285203-612x612_apertura_de_autos.jpg"
+      "istockphoto-1137285203-612x612 apertura de autos.jpg"
     ),
     new Servicio(
       "Apertura de cajas fuertes",
-      "Apertura de cajas fuertes y arreglos.",
+      "Reparación de cajas fuertes.",
       "3306927 caja fuerte.png"
     )
   ];
 
-  const contenedorTarjetas = document.querySelector(".tarjetas-container");
+  // Contenedor de tarjetas de servicios
+  const contenedorTarjetas = document.getElementById("tarjetas-inner");
   servicios.forEach(servicio => {
     contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
@@ -44,20 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     document.getElementById("form-contacto").reset();
   });
-
-  // Manejo de la sección de servicios
-  const serviciosSection = document.getElementById("servicios");
-  document
-    .querySelector('nav a[href="#servicios"]')
-    .addEventListener("click", e => {
-      e.preventDefault();
-      serviciosSection.style.display =
-        serviciosSection.style.display === "none" ||
-        serviciosSection.style.display === ""
-          ? "block"
-          : "none";
-    });
-
-  // Ocultar la sección de servicios inicialmente
-  serviciosSection.style.display = "none";
 });

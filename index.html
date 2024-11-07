@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="codigo.css">
 </head>
 <body>
+    <!-- Header con navegación -->
     <header>
         <p class="urgencia">URGENCIAS 24HS</p>
         <nav>
@@ -18,26 +19,23 @@
         </nav>
     </header>
 
+    <!-- Sección de inicio -->
     <section id="inicio">
         <h1>CERRAJERÍA</h1>
         <h2>MUNDO COMBINACIONES</h2>
         <div class="contenedor1">
-            <img src="planeta.gif" alt="Imagen del planeta tierra girando es un gif" class="imagen-reducida">
+            <img src="planeta.gif" alt="Imagen del planeta tierra girando" class="imagen-reducida">
         </div>
         <p>¡Atendemos emergencias las 24 horas! Apertura de puertas, cambio de cerraduras y más.</p>
     </section>
 
-    <div id="servicios">
+    <!-- Sección de servicios -->
+    <section id="servicios">
         <h3>Nuestros Servicios</h3>
-        
-        <div class="tarjetas-container"></div>
-           
+        <div class="tarjetas-container" id="tarjetas-inner"></div> <!-- Contenedor de tarjetas -->
+    </section>
 
-            
-        </div>
-
-    
-
+    <!-- Sección de contacto -->
     <section id="contacto">
         <h4>Contáctanos</h4>
         <form id="form-contacto">
@@ -51,10 +49,13 @@
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 Cerrajería Mundo Combinaciones. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="codigo.js"></script>
+    <!-- Scripts -->
+    <script src="servicio.js" type="module"></script>
+    <script src="codigo.js" type="module"></script>
 </body>
 </html>
