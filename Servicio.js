@@ -25,4 +25,4 @@ export class Servicio {
 
     return tarjeta;
   }
-}
+};

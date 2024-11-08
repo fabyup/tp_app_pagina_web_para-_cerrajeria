@@ -44,9 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value;
+
+    const formData = { nombre, telefono, mensaje };
+    localStorage.setItem("formData", JSON.stringify(formData));
+
     alert(
       `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
     );
+
     document.getElementById("form-contacto").reset();
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedData = JSON.parse(localStorage.getItem("formData"));
+  if (savedData) {
+    const contactoInfo = document.getElementById("contacto1");
+    contactoInfo.innerHTML += `
+            <p>Último contacto registrado:</p>
+            <p>Nombre: ${savedData.nombre}</p>
+            <p>Teléfono: ${savedData.telefono}</p>
+            <p>Mensaje: ${savedData.mensaje}</p>
+        `;
+  }
 });
