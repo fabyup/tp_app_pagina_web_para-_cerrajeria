@@ -1,7 +1,8 @@
 import { Servicio } from "./Servicio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Lista de servicios
+  //* Lista de servicios //*
+
   const servicios = [
     new Servicio(
       "Apertura de puertas",
@@ -15,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ),
     new Servicio(
       "Duplicado de llaves",
-      "Realizamos duplicados de llaves en el momento.",
+      "Realizamos duplicados de llaves en el acto.",
       "keys-8877747_640.png"
     ),
     new Servicio(
-      "Apertura de puertas de autos",
+      "Apertura  de autos",
       "Trabajos con eficiencia.",
       "istockphoto-1137285203-612x612 apertura de autos.jpg"
     ),
@@ -30,13 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
     )
   ];
 
-  // Contenedor de tarjetas de servicios
+  //* Contenedor de tarjetas de servicios *//*
+
   const contenedorTarjetas = document.getElementById("tarjetas-inner");
   servicios.forEach(servicio => {
     contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
 
-  // Manejo del formulario de contacto
+  //* Manejo del formulario de contacto //*
+
   document.getElementById("form-contacto").addEventListener("submit", e => {
     e.preventDefault();
     const nombre = document.getElementById("nombre").value;
