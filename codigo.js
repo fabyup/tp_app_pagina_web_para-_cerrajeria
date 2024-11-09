@@ -59,12 +59,5 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const savedData = JSON.parse(localStorage.getItem("formData"));
   if (savedData) {
-    const contactoInfo = document.getElementById("contacto1");
-    contactoInfo.innerHTML += `
-            <p>Último contacto registrado:</p>
-            <p>Nombre: ${savedData.nombre}</p>
-            <p>Teléfono: ${savedData.telefono}</p>
-            <p>Mensaje: ${savedData.mensaje}</p>
-        `;
   }
 });
