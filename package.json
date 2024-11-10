@@ -1,0 +1,17 @@
+{
+  "name": "tp_app_pagina_web_para-_cerrajeria",
+  "version": "1.0.0",
+  "description": "**Cerrajería Mundo Combinaciones** es una aplicación web para una cerrajería que ofrece servicios de urgencia las 24 horas. La aplicación permite a los usuarios conocer los servicios disponibles y contactar a la empresa a través de un formulario o WhatsApp. Está desarrollada usando programación orientada a objetos (POO) y se ha implementado con buenas prácticas de código y documentación.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "sqlite3": "^5.1.7"
+  }
+}

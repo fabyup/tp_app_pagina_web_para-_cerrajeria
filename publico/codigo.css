@@ -35,13 +35,13 @@ nav ul {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
-h3 {
-  color: #0f2591;
+.nuestros {
+  color: #f103f1;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 /* Sección general */

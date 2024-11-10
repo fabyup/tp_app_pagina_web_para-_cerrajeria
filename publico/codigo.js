@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Servicio(
       "Apertura de cajas fuertes",
       "Reparación de cajas fuertes.",
-      "3306927 caja fuerte.png"
+      "3306927 caja fuerte copy.png"
     )
   ];
 
