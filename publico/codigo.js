@@ -1,6 +1,18 @@
+/**
+ * Script para manejar los servicios y la gestión de mensajes de contacto en LocalStorage.
+ * Incluye:
+ * - Creación de tarjetas de servicios.
+ * - Almacenamiento y visualización de mensajes de contacto en LocalStorage.
+ * - Eliminación de mensajes específicos.
+ */
+
 import { Servicio } from "./Servicio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Lista de servicios predefinidos.
+   * @type {Array} - Array de objetos de la clase Servicio.
+   */
   const servicios = [
     new Servicio(
       "Apertura de puertas",
@@ -28,65 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
       "3306927 caja fuerte copy.png"
     )
   ];
+
+  /**
+   * Selecciona el contenedor en el DOM para mostrar las tarjetas de servicios y añade cada tarjeta de servicio.
+   */
   const contenedorTarjetas = document.getElementById("tarjetas-inner");
   servicios.forEach(servicio => {
     contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
 
-  const displayEntries = () => {
-    const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
-    const displayArea = document.getElementById("display-area");
-
-    displayArea.innerHTML = "";
-
-    savedEntries.forEach((entry, index) => {
-      const entryDiv = document.createElement("div");
-      entryDiv.innerHTML = `<p><strong>Nombre:</strong> ${entry.nombre}</p>
-                            <p><strong>Teléfono:</strong> ${entry.telefono}</p>
-                            <p><strong>Mensaje:</strong> ${entry.mensaje}</p><hr>`;
-      displayArea.appendChild(entryDiv);
-    });
-  };
-
-  document.getElementById("form-contacto").addEventListener("submit", e => {
-    e.preventDefault();
-
-    const nombre = document.getElementById("nombre").value;
-    const telefono = document.getElementById("telefono").value;
-    const mensaje = document.getElementById("mensaje").value;
-
-    if (!nombre || !telefono || !mensaje) {
-      alert("Por favor, completa todos los campos.");
-      return;
-    }
-
-    const formData = {
-      nombre,
-      telefono,
-      mensaje
-    };
-
-    const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
-
-    formEntries.push(formData);
-
-    localStorage.setItem("formEntries", JSON.stringify(formEntries));
-
-    alert(
-      `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
-    );
-
-    document.getElementById("form-contacto").reset();
-
-    displayMessages();
-  });
-
-  function displayMessages() {
+  /**
+   * Función para mostrar los mensajes de contacto almacenados en LocalStorage.
+   * Muestra cada mensaje en el área de visualización de mensajes en el DOM.
+   */
+  const displayMessages = () => {
     const messagesDisplay = document.getElementById("messages-display");
-    messagesDisplay.innerHTML = ""; // Limpiar el contenedor antes de mostrar
+    messagesDisplay.innerHTML = ""; // Limpia el contenedor de mensajes antes de mostrar
 
+    // Recupera las entradas guardadas en LocalStorage o inicializa un array vacío si no existen
     const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
 
+    // Itera sobre cada mensaje y lo agrega al contenedor de visualización
     savedEntries.forEach((entry, index) => {
       const entryDiv = document.createElement("div");
       entryDiv.classList.add("message-entry");
@@ -101,17 +75,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
       messagesDisplay.appendChild(entryDiv);
     });
-  }
+  };
 
-  window.deleteMessage = function(index) {
-    let formEntries = JSON.parse(localStorage.getItem("formEntries"));
+  /**
+   * Escucha el envío del formulario de contacto, guarda los datos en LocalStorage y actualiza la visualización.
+   * Validación previa de campos obligatorios y prevención de recarga de página.
+   */
+  document.getElementById("form-contacto").addEventListener("submit", e => {
+    e.preventDefault(); // Previene el comportamiento predeterminado del formulario
 
-    formEntries.splice(index, 1);
+    // Captura de los valores del formulario
+    const nombre = document.getElementById("nombre").value;
+    const telefono = document.getElementById("telefono").value;
+    const mensaje = document.getElementById("mensaje").value;
 
+    // Validación para asegurar que todos los campos están completos
+    if (!nombre || !telefono || !mensaje) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
+
+    // Crea un objeto que contiene los datos del formulario
+    const formData = { nombre, telefono, mensaje };
+
+    // Recupera las entradas existentes en LocalStorage o inicializa un array vacío si no existen
+    const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+    // Añade la nueva entrada al array de entradas
+    formEntries.push(formData);
+
+    // Guarda el array actualizado en LocalStorage
     localStorage.setItem("formEntries", JSON.stringify(formEntries));
 
+    // Muestra una alerta de confirmación al usuario
+    alert(
+      `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
+    );
+
+    // Limpia los campos del formulario
+    document.getElementById("form-contacto").reset();
+
+    // Llama a displayMessages para actualizar la visualización con el nuevo mensaje
+    displayMessages();
+  });
+
+  /**
+   * Función para eliminar un mensaje de contacto específico tanto de LocalStorage como del DOM.
+   * @param {number} index - Índice del mensaje en el array de LocalStorage.
+   */
+  window.deleteMessage = function(index) {
+    let formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+    // Elimina la entrada especificada por el índice en el array
+    formEntries.splice(index, 1);
+
+    // Actualiza LocalStorage con el array modificado
+    localStorage.setItem("formEntries", JSON.stringify(formEntries));
+
+    // Llama a displayMessages para actualizar la visualización después de la eliminación
     displayMessages();
   };
 
+  // Llama a displayMessages al cargar la página para mostrar mensajes guardados
   displayMessages();
 });
