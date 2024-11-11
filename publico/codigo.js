@@ -81,25 +81,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("form-contacto").reset();
   });
-
-  //* Código para mostrar las entradas guardadas en la página *//
-  const displayEntries = () => {
-    const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
-    const displayArea = document.getElementById("display-area");
-
-    //* Limpiamos el área de visualización para evitar duplicados*//
-    displayArea.innerHTML = "";
-
-    // *Mostramos cada entrada guardada*//
-    savedEntries.forEach((entry, index) => {
-      const entryDiv = document.createElement("div");
-      entryDiv.innerHTML = `<p><strong>Nombre:</strong> ${entry.nombre}</p>
-                            <p><strong>Teléfono:</strong> ${entry.telefono}</p>
-                            <p><strong>Mensaje:</strong> ${entry.mensaje}</p><hr>`;
-      displayArea.appendChild(entryDiv);
-    });
-  };
-
-  // *Llamamos a la función para mostrar las entradas al cargar la página*//
-  displayEntries();
 });
