@@ -1,7 +1,11 @@
 import { Servicio } from "./Servicio.js";
 
+//*  cuando se carga el contenido de la página  se ejecuta el evento *//
+
 document.addEventListener("DOMContentLoaded", () => {
   //* Lista de servicios //*
+
+  // *Creamos instancias de la clase Servicio con nombre, descripción e imagen para cada servicio*//
 
   const servicios = [
     new Servicio(
@@ -31,21 +35,32 @@ document.addEventListener("DOMContentLoaded", () => {
     )
   ];
 
-  //* Contenedor de tarjetas de servicios *//*
+  //* Contenedor de tarjetas de servicios *//
+
+  //* Seleccionamos el contenedor donde se mostrarán las tarjetas de servicios*//
 
   const contenedorTarjetas = document.getElementById("tarjetas-inner");
+
+  // *Iteramos sobre el array de servicios y creamos cada tarjeta, luego las añadimos al contenedor*//
+
   servicios.forEach(servicio => {
     contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
 
   //* Manejo del formulario de contacto //*
 
+  //* Capturamos el evento de envío del formulario para guardar los datos en LocalStorage*//
+
   document.getElementById("form-contacto").addEventListener("submit", e => {
     e.preventDefault();
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value;
 
-    const formData = { nombre, telefono, mensaje };
+    const formData = {
+      nombre,
+      telefono,
+      mensaje
+    };
     localStorage.setItem("formData", JSON.stringify(formData));
 
     alert(
@@ -54,9 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("form-contacto").reset();
   });
+
+  //* Mostrar solicitudes guardadas en LocalStorage al cargar la página *//
+
+  //* Se utiliza el evento DOMContentLoaded para que se ejecute cuando se cargan todos los elementos HTML*//
+
   document.addEventListener("DOMContentLoaded", () => {
     const savedData = JSON.parse(localStorage.getItem("formData"));
     if (savedData) {
+      document.getElementById("nombre").value = savedData.nombre;
+      document.getElementById("telefono").value = savedData.telefono;
     }
   });
 });
