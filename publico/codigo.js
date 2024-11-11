@@ -3,8 +3,6 @@ import { Servicio } from "./Servicio.js";
 //*  cuando se carga el contenido de la página  se ejecuta el evento *//
 
 document.addEventListener("DOMContentLoaded", () => {
-  const tarjeta = document.createElement("div");
-
   //* Lista de servicios //*
 
   // *Creamos instancias de la clase Servicio con nombre, descripción e imagen para cada servicio*//
@@ -60,11 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value;
+    const mensaje = document.getElementById("mensaje").value;
 
-    // *Creamos un objeto con los datos del formulario y lo guardamos en LocalStorage*//
-
+    // *Creamos un objeto con los datos del formulario *//
     const formData = { nombre, telefono, mensaje };
-    localStorage.setItem("formData", JSON.stringify(formData));
+
+    //* Obtenemos las entradas existentes en LocalStorage o creamos un array vacío*//
+    const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+    // *Agregamos los nuevos datos al array*//
+    formEntries.push(formData);
+
+    // *Guardamos el array actualizado en LocalStorage*//
+    localStorage.setItem("formEntries", JSON.stringify(formEntries));
 
     //* Notificamos al usuario que el formulario se ha enviado correctamente*//
     alert(
@@ -76,13 +82,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("form-contacto").reset();
   });
 
-  //* Mostrar solicitudes guardadas en LocalStorage al cargar la página *//
+  //* Código para mostrar las entradas guardadas en la página *//
+  const displayEntries = () => {
+    const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+    const displayArea = document.getElementById("display-area");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedData = JSON.parse(localStorage.getItem("formData"));
-    if (savedData) {
-      document.getElementById("nombre").value = savedData.nombre;
-      document.getElementById("telefono").value = savedData.telefono;
-    }
-  });
+    //* Limpiamos el área de visualización para evitar duplicados*//
+    displayArea.innerHTML = "";
+
+    // *Mostramos cada entrada guardada*//
+    savedEntries.forEach((entry, index) => {
+      const entryDiv = document.createElement("div");
+      entryDiv.innerHTML = `<p><strong>Nombre:</strong> ${entry.nombre}</p>
+                            <p><strong>Teléfono:</strong> ${entry.telefono}</p>
+                            <p><strong>Mensaje:</strong> ${entry.mensaje}</p><hr>`;
+      displayArea.appendChild(entryDiv);
+    });
+  };
+
+  // *Llamamos a la función para mostrar las entradas al cargar la página*//
+  displayEntries();
 });

@@ -145,6 +145,29 @@ p {
   background-color: #0056b3;
 }
 
+
+#display-area {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#display-area div {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#display-area div:last-child {
+  border-bottom: none;
+}
+
+#display-area p {
+  margin: 5px 0;
+  color: #333;
+}
+
 /* Estilos del footer */
 footer {
   color: #3a92e9;
