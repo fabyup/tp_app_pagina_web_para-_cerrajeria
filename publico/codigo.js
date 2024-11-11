@@ -1,9 +1,6 @@
 import { Servicio } from "./Servicio.js";
 
-//* Evento que se ejecuta cuando se carga el contenido de la página *//
 document.addEventListener("DOMContentLoaded", () => {
-  //* Lista de servicios *//
-  // Creamos instancias de la clase Servicio con nombre, descripción e imagen para cada servicio.
   const servicios = [
     new Servicio(
       "Apertura de puertas",
@@ -31,45 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
       "3306927 caja fuerte copy.png"
     )
   ];
-
-  document.getElementById("form-contacto").addEventListener("submit", e => {
-    e.preventDefault();
-
-    // Capturamos los datos del formulario
-    const nombre = document.getElementById("nombre").value;
-    const telefono = document.getElementById("telefono").value;
-    const mensaje = document.getElementById("mensaje").value;
-
-    // Creamos un objeto con los datos del formulario
-    const formData = { nombre, telefono, mensaje };
-
-    // Obtenemos las entradas existentes en LocalStorage o creamos un array vacío
-    const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
-
-    // Agregamos los nuevos datos al array
-    formEntries.push(formData);
-
-    // Guardamos el array actualizado en LocalStorage
-    localStorage.setItem("formEntries", JSON.stringify(formEntries));
-
-    // Mensaje de confirmación
-    alert(
-      `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
-    );
-
-    // Limpiamos el formulario
-    document.getElementById("form-contacto").reset();
+  const contenedorTarjetas = document.getElementById("tarjetas-inner");
+  servicios.forEach(servicio => {
+    contenedorTarjetas.appendChild(servicio.crearTarjeta());
   });
 
-  //* Código para mostrar las entradas guardadas en la página *//
   const displayEntries = () => {
     const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
-    const displayArea = document.getElementById("display-area"); // Asegúrate de tener un contenedor con este id
+    const displayArea = document.getElementById("display-area");
 
-    // Limpiamos el área de visualización para evitar duplicados
     displayArea.innerHTML = "";
 
-    // Mostramos cada entrada guardada
     savedEntries.forEach((entry, index) => {
       const entryDiv = document.createElement("div");
       entryDiv.innerHTML = `<p><strong>Nombre:</strong> ${entry.nombre}</p>
@@ -79,6 +48,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Llamamos a la función para mostrar las entradas al cargar la página
-  displayEntries();
+  document.getElementById("form-contacto").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+    const telefono = document.getElementById("telefono").value;
+    const mensaje = document.getElementById("mensaje").value;
+
+    if (!nombre || !telefono || !mensaje) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
+
+    const formData = {
+      nombre,
+      telefono,
+      mensaje
+    };
+
+    const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+    formEntries.push(formData);
+
+    localStorage.setItem("formEntries", JSON.stringify(formEntries));
+
+    alert(
+      `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
+    );
+
+    document.getElementById("form-contacto").reset();
+
+    displayMessages();
+  });
+
+  function displayMessages() {
+    const messagesDisplay = document.getElementById("messages-display");
+    messagesDisplay.innerHTML = ""; // Limpiar el contenedor antes de mostrar
+
+    const savedEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
+
+    savedEntries.forEach((entry, index) => {
+      const entryDiv = document.createElement("div");
+      entryDiv.classList.add("message-entry");
+
+      entryDiv.innerHTML = `
+        <p><strong>Nombre:</strong> ${entry.nombre}</p>
+        <p><strong>Teléfono:</strong> ${entry.telefono}</p>
+        <p><strong>Mensaje:</strong> ${entry.mensaje}</p>
+        <button onclick="deleteMessage(${index})">Eliminar</button>
+        <hr>
+      `;
+
+      messagesDisplay.appendChild(entryDiv);
+    });
+  }
+
+  window.deleteMessage = function(index) {
+    let formEntries = JSON.parse(localStorage.getItem("formEntries"));
+
+    formEntries.splice(index, 1);
+
+    localStorage.setItem("formEntries", JSON.stringify(formEntries));
+
+    displayMessages();
+  };
+
+  displayMessages();
 });
