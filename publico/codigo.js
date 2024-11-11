@@ -54,10 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("form-contacto").reset();
   });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const savedData = JSON.parse(localStorage.getItem("formData"));
-  if (savedData) {
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedData = JSON.parse(localStorage.getItem("formData"));
+    if (savedData) {
+    }
+  });
 });
