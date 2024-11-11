@@ -3,6 +3,8 @@ import { Servicio } from "./Servicio.js";
 //*  cuando se carga el contenido de la página  se ejecuta el evento *//
 
 document.addEventListener("DOMContentLoaded", () => {
+  const tarjeta = document.createElement("div");
+
   //* Lista de servicios //*
 
   // *Creamos instancias de la clase Servicio con nombre, descripción e imagen para cada servicio*//
@@ -53,26 +55,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("form-contacto").addEventListener("submit", e => {
     e.preventDefault();
+
+    //* Capturamos los valores de los campos de entrada del formulario*//
+
     const nombre = document.getElementById("nombre").value;
     const telefono = document.getElementById("telefono").value;
 
-    const formData = {
-      nombre,
-      telefono,
-      mensaje
-    };
+    // *Creamos un objeto con los datos del formulario y lo guardamos en LocalStorage*//
+
+    const formData = { nombre, telefono, mensaje };
     localStorage.setItem("formData", JSON.stringify(formData));
 
+    //* Notificamos al usuario que el formulario se ha enviado correctamente*//
     alert(
       `¡Gracias, ${nombre}! Nos pondremos en contacto al ${telefono} pronto.`
     );
+
+    //* Limpiamos el formulario después de enviar los datos*//
 
     document.getElementById("form-contacto").reset();
   });
 
   //* Mostrar solicitudes guardadas en LocalStorage al cargar la página *//
-
-  //* Se utiliza el evento DOMContentLoaded para que se ejecute cuando se cargan todos los elementos HTML*//
 
   document.addEventListener("DOMContentLoaded", () => {
     const savedData = JSON.parse(localStorage.getItem("formData"));
