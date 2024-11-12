@@ -139,3 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // Llama a displayMessages al cargar la página para mostrar mensajes guardados
   displayMessages();
 });
+
+/**
+ * Función para mostrar los mensajes si se ingresa la contraseña correcta.
+ * Cambia "contraseñaSegura" por la contraseña que prefieras.
+ */
+function mostrarMensajes() {
+  const password = document.getElementById("password").value;
+
+  if (password === "hola") {
+    // Cambia "contraseñaSegura" por la contraseña deseada
+    document.getElementById("messages-display").style.display = "block";
+    displayMessages(); // Llama a la función para cargar los mensajes en la pantalla
+  } else {
+    alert("Contraseña incorrecta");
+  }
+}
+window.mostrarMensajes = mostrarMensajes;
