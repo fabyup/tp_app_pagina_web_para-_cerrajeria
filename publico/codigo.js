@@ -41,6 +41,43 @@ document.addEventListener("DOMContentLoaded", () => {
     )
   ];
 
+  // Selecciona el contenedor donde estarán las tarjetas del carrusel
+  const carouselCards = document.getElementById("carousel-cards");
+  let indiceActual = 0;
+
+  // Llena el carrusel con tarjetas
+  servicios.forEach(servicio => {
+    const card = servicio.crearTarjeta(); // crea una tarjeta usando tu método
+    card.classList.add("carousel-card"); // Agrega una clase para estilo
+    carouselCards.appendChild(card); // Añade la tarjeta al carrusel
+  });
+
+  // Función para actualizar la posición del carrusel
+  function actualizarCarrusel() {
+    const anchoTarjeta = document.querySelector(".carousel-card").offsetWidth;
+    carouselCards.style.transform = `translateX(-${indiceActual *
+      anchoTarjeta}px)`;
+  }
+
+  // Función para mostrar la tarjeta anterior
+  window.slideAnterior = function() {
+    if (indiceActual > 0) {
+      indiceActual--;
+      actualizarCarrusel();
+    }
+  };
+
+  // Función para mostrar la tarjeta siguiente
+  window.slideSiguiente = function() {
+    if (indiceActual < servicios.length - 1) {
+      indiceActual++;
+      actualizarCarrusel();
+    }
+  };
+
+  // Evento para ajustar el carrusel en caso de cambio de tamaño de la ventana
+  window.addEventListener("resize", actualizarCarrusel);
+
   /**
    * Selecciona el contenedor en el DOM para mostrar las tarjetas de servicios y añade cada tarjeta de servicio.
    */
@@ -96,7 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Crea un objeto que contiene los datos del formulario
-    const formData = { nombre, telefono, mensaje };
+    const formData = {
+      nombre,
+      telefono,
+      mensaje
+    };
 
     // Recupera las entradas existentes en LocalStorage o inicializa un array vacío si no existen
     const formEntries = JSON.parse(localStorage.getItem("formEntries")) || [];
@@ -150,7 +191,7 @@ function mostrarMensajes() {
   if (password === "hola") {
     // Cambia "contraseñaSegura" por la contraseña deseada
     document.getElementById("messages-display").style.display = "block";
-    displayMessages(); // Llama a la función para cargar los mensajes en la pantalla
+    displayMessages();
   } else {
     alert("Contraseña incorrecta");
   }

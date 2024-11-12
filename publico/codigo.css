@@ -222,3 +222,41 @@ footer {
   height: 24px;
   margin: 0 5px;
 }
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.carousel-cards {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-card {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

@@ -28,12 +28,16 @@
         </div>
         <p>¡Atendemos emergencias las 24 horas! Apertura de puertas, cambio de cerraduras y más.</p>
     </section>
-
    
-    <section id="servicios">
+<section id="servicios">
         <h3 class="nuestros servicios">Nuestros Servicios</h3>
-        <div class="tarjetas-container" id="tarjetas-inner"></div> 
-    </section>
+
+ <div class="carousel-container">
+  <div class="carousel-cards" id="carousel-cards"></div>
+  <button class="carousel-btn prev" onclick="slideAnterior()">❮</button>
+  <button class="carousel-btn next" onclick="slideSiguiente()">❯</button>
+</div>
+
     <seccion id="contacto1">
         <p>CELULAR: 1123320333</p>
         <P>MAIL: alejandromudry49@gmail.com</P>
@@ -53,14 +57,10 @@
         </form>
 </section>
 
- 
-<input type="password" id="password" placeholder="Introduce la contraseña">
+ <input type="password" id="password" placeholder="Introduce la contraseña">
 <button onclick="mostrarMensajes()">Mostrar mensajes</button>
-
-<!-- Contenedor de mensajes oculto -->
 <div id="messages-display" style="display: none;"></div>
 
-        
  <footer>
     <p>© 2024 Cerrajería Mundo Combinaciones. Todos los derechos reservados.</p>
     <a href="https://wa.me/1123320333" target="_blank">
@@ -79,6 +79,10 @@
 </body>
 </html>
 
+        
+
+
+
    
 
 
@@ -86,7 +90,11 @@
    
          
    
-<!-- Campo de contraseña y botón para mostrar mensajes -->
 
 
   
+    
+
+
+    
+   
