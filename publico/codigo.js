@@ -79,14 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", actualizarCarrusel);
 
   /**
-   * Selecciona el contenedor en el DOM para mostrar las tarjetas de servicios y añade cada tarjeta de servicio.
-   */
-  const contenedorTarjetas = document.getElementById("tarjetas-inner");
-  servicios.forEach(servicio => {
-    contenedorTarjetas.appendChild(servicio.crearTarjeta());
-  });
-
-  /**
    * Función para mostrar los mensajes de contacto almacenados en LocalStorage.
    * Muestra cada mensaje en el área de visualización de mensajes en el DOM.
    */
