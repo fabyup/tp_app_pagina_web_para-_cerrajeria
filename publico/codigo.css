@@ -170,6 +170,7 @@ p {
 
 /* Estilos del footer */
 footer {
+  width: 100%;
 
   color: #3a92e9;
   background-color: #000080;
