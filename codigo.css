@@ -6,6 +6,7 @@
 
 /* Estilos generales */
 body {
+
   font-family: Arial, sans-serif;
   background-color: #000;
   color: white;
@@ -46,14 +47,13 @@ nav a {
 
 
 section {
-  margin: 20px auto;
-  padding: 20px;
+
+
   background-color: #000;
-  border-radius: 5px;
   color: #515cff;
   text-align: center;
-  max-width: 1200px;
-  width: 90%;
+
+
 }
 
 
@@ -170,12 +170,12 @@ p {
 
 /* Estilos del footer */
 footer {
-  width: 100%;
+  max-width: 100%;
 
   color: #3a92e9;
   background-color: #000080;
   text-align: center;
-  padding: 10px 0;
+  padding: 10 0px;
   font-size: 1rem;
 }
 
