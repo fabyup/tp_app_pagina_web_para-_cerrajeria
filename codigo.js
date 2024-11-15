@@ -1,12 +1,8 @@
-/**
- * Script para manejar los servicios y la gestión de mensajes de contacto en LocalStorage.
- * Incluye:
- * - Creación de tarjetas de servicios.
- * - Almacenamiento y visualización de mensajes de contacto en LocalStorage.
- * - Eliminación de mensajes específicos.
- */
+// Importa la clase "Servicio" desde otro archivo JavaScript
 
 import { Servicio } from "./Servicio.js";
+
+// Espera a que el DOM se cargue completamente antes de ejecutar el código
 
 document.addEventListener("DOMContentLoaded", () => {
   /**
@@ -45,11 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const carouselCards = document.getElementById("carousel-cards");
   let indiceActual = 0;
 
-  // Llena el carrusel con tarjetas
+  // Llena el carrusel con tarjetas de servicios
   servicios.forEach(servicio => {
-    const card = servicio.crearTarjeta(); // crea una tarjeta usando tu método
-    card.classList.add("carousel-card"); // Agrega una clase para estilo
-    carouselCards.appendChild(card); // Añade la tarjeta al carrusel
+    // Crea una tarjeta HTML usando el método 'crearTarjeta' de la clase Servicio
+    const card = servicio.crearTarjeta();
+
+    // Agrega una clase CSS para darle estilo a la tarjeta
+    card.classList.add("carousel-card");
+
+    // Añade la tarjeta al carrusel
+    carouselCards.appendChild(card);
   });
 
   // Función para actualizar la posición del carrusel
