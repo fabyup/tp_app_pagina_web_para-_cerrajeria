@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* Estilos generales */
+
 body {
 
   font-family: Arial, sans-serif;
@@ -12,8 +12,9 @@ body {
   color: white;
 }
 
-/* Estilos de header y navegación */
+
 header {
+
   background-color: #000080;
   color: white;
   text-align: center;
@@ -168,7 +169,7 @@ p {
   color: #333;
 }
 
-/* Estilos del footer */
+
 footer {
   max-width: 100%;
 
