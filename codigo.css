@@ -194,9 +194,7 @@ footer {
     max-width: 90%;
   }
 
-  p, h3, h2 {
-    font-size: 1.2rem;
-  }
+
 }
 
 @media (max-width: 480px) {
