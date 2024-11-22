@@ -3,7 +3,6 @@ export class ServicioDOM {
   static crearTarjeta(servicio) {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta");
-
     const h3 = document.createElement("h3");
     h3.textContent = servicio.nombre;
     tarjeta.appendChild(h3);
