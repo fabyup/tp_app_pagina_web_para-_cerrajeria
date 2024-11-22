@@ -1,7 +1,6 @@
 // Importa la clase "Servicio" desde otro archivo JavaScript
-import { Servicio } from "./Servicio.js";
-
 import { ServicioDOM } from "./ServicioDom.js";
+import { Servicio } from "./Servicio.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   /**
