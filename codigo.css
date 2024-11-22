@@ -85,7 +85,23 @@ h2 {
   margin-top: 8px;
 }
 
+.contacto-de-cerrajero {
+  font-size: 25px;
+  font-weight: 20%;
+}
+
+.numero-de-contacto {
+  color: #fd0000;
+  font-size: 30px;
+  font-weight: 30px;
+}
+
+.correo-electronico {
+  color: #fd0000;
+}
+
 p {
+
   text-align: center;
   font-size: 1.2rem;
   margin: 5px 0 16px;
@@ -173,10 +189,11 @@ footer {
   }
 
   h2, h3 {
-    font-size: 1rem;
+    font-size: 3rem;
   }
 
   p {
+    color: #fd0000;
     font-size: 1rem;
   }
 }
@@ -196,6 +213,7 @@ footer {
   }
 
   p {
+    color: #fd0000;
     font-size: 1rem;
   }
 }
