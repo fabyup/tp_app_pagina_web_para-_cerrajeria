@@ -1,8 +1,7 @@
 // Importa la clase "Servicio" desde otro archivo JavaScript
-
 import { Servicio } from "./Servicio.js";
 
-// Espera a que el DOM se cargue completamente antes de ejecutar el código
+import { ServicioDOM } from "./ServicioDom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   /**
@@ -39,12 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Selecciona el contenedor donde estarán las tarjetas del carrusel
   const carouselCards = document.getElementById("carousel-cards");
-  let indiceActual = 0;
 
   // Llena el carrusel con tarjetas de servicios
   servicios.forEach(servicio => {
     // Crea una tarjeta HTML usando el método 'crearTarjeta' de la clase Servicio
-    const card = servicio.crearTarjeta();
+    const card = ServicioDOM.crearTarjeta(servicio);
 
     // Agrega una clase CSS para darle estilo a la tarjeta
     card.classList.add("carousel-card");
@@ -52,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Añade la tarjeta al carrusel
     carouselCards.appendChild(card);
   });
+
+  let indiceActual = 0;
 
   // Función para actualizar la posición del carrusel
   function actualizarCarrusel() {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * Validación previa de campos obligatorios y prevención de recarga de página.
    */
   document.getElementById("form-contacto").addEventListener("submit", e => {
-    e.preventDefault(); // Previene el comportamiento predeterminado del formulario
+    e.preventDefault();
 
     // Captura de los valores del formulario
     const nombre = document.getElementById("nombre").value;
