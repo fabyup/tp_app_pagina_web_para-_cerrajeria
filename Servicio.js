@@ -1,7 +1,7 @@
 export class Servicio {
   #nombre;
-  #imagen;
   #descripcion;
+  #imagen;
 
   constructor(nombre, descripcion, imagen) {
     this.#nombre = nombre;
@@ -14,11 +14,11 @@ export class Servicio {
     return this.#nombre;
   }
 
-  get imagen() {
-    return this.#imagen;
-  }
-
   get descripcion() {
     return this.#descripcion;
+  }
+
+  get imagen() {
+    return this.#imagen;
   }
 }
