@@ -235,6 +235,9 @@ footer {
 .carousel-cards {
   display: flex;
   transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
 }
 
 .carousel-card {
@@ -242,10 +245,6 @@ footer {
   box-sizing: border-box;
 
 
-  -webkit-transition: transform 0.5s ease;
-  -moz-transition: transform 0.5s ease;
-  -o-transition: transform 0.5s ease;
-  transition: transform 0.5s ease;
 }
 
 
