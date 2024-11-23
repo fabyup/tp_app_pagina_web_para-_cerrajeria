@@ -240,7 +240,15 @@ footer {
 .carousel-card {
   min-width: 100%;
   box-sizing: border-box;
+
+
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
+
+
 
 .carousel-btn {
   position: absolute;
