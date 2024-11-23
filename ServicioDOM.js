@@ -1,11 +1,5 @@
 // Clase para crear la tarjeta de servicio en el DOM
 export class ServicioDOM {
-  /**
-   * Método estático que crea una tarjeta visual para un servicio.
-   * @param {Object} servicio - Un objeto que contiene la información de un servicio (nombre, descripción, imagen).
-   * @returns {HTMLElement} - Devuelve un elemento de tipo div que representa una tarjeta de servicio en el DOM.
-   */
-
   static crearTarjeta(servicio) {
     const tarjeta = document.createElement("div");
 
