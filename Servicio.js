@@ -1,12 +1,12 @@
 export class Servicio {
   #nombre;
-  #descripcion;
   #imagen;
+  #descripcion;
 
   constructor(nombre, descripcion, imagen) {
     this.#nombre = nombre;
-    this.#descripcion = descripcion;
     this.#imagen = imagen;
+    this.#descripcion = descripcion;
   }
 
   // Métodos getter para acceder a las propiedades privadas
@@ -14,11 +14,11 @@ export class Servicio {
     return this.#nombre;
   }
 
-  get descripcion() {
-    return this.#descripcion;
-  }
-
   get imagen() {
     return this.#imagen;
+  }
+
+  get descripcion() {
+    return this.#descripcion;
   }
 }
