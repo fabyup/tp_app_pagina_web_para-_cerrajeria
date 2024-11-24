@@ -1,3 +1,5 @@
+ import { ServicioDOM } from "./ServicioDOM.js";
+
 export class Servicio {
   #nombre;
   #descripcion;
