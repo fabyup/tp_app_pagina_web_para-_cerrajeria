@@ -183,7 +183,6 @@ function mostrarMensajes() {
   if (password === "hola") {
     // Cambia "contraseñaSegura" por la contraseña deseada
     document.getElementById("messages-display").style.display = "block";
-    displayMessages();
   } else {
     alert("Contraseña incorrecta");
   }

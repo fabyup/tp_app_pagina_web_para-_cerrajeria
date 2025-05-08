@@ -1,32 +1,35 @@
 // Clase para crear la tarjeta de servicio en el DOM
-export class ServicioDOM {
-  static crearTarjeta(servicio) {
-    const tarjeta = document.createElement("div");
+  export class ServicioDOM{
+ 
+    static crearTarjeta(servicio) {
 
-    tarjeta.classList.add("tarjeta");
+      const tarjeta = document.createElement("div");
 
-    const h3 = document.createElement("h3");
+      tarjeta.classList.add("tarjeta");
 
-    h3.textContent = servicio.nombre;
+      const h3 = document.createElement("h3");
 
-    tarjeta.appendChild(h3);
+      h3.textContent = servicio.nombre;
 
-    const img = document.createElement("img");
+      tarjeta.appendChild(h3);
 
-    img.src = servicio.imagen;
+      const img = document.createElement("img");
 
-    img.alt = servicio.nombre;
+      img.src = servicio.imagen;
 
-    img.classList.add("imagen-cerrajero");
+      img.alt = servicio.nombre;
 
-    tarjeta.appendChild(img);
+      img.classList.add("imagen-cerrajero");
 
-    const p = document.createElement("p");
+      tarjeta.appendChild(img);
 
-    p.textContent = servicio.descripcion;
+      const p = document.createElement("p");
 
-    tarjeta.appendChild(p);
+      p.textContent = servicio.descripcion;
 
-    return tarjeta;
-  }
+      tarjeta.appendChild(p);
+
+      return tarjeta;
+    }
+  
 }
